@@ -1,4 +1,6 @@
 .cargo
 .github
 .yarn
+node_modules
+npm
 target
