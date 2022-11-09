@@ -3,7 +3,7 @@
   "repository": "HigherOrderLogic/scule",
   "homepage": "https://github.com/HigherOrderLogic/scule#readme",
   "description": "A string case utils library.",
-  "version": "0.1.0",
+  "version": "0.1.1",
   "license": "MIT",
   "main": "index.js",
   "types": "index.d.ts",
