@@ -27,7 +27,6 @@ jobs:
 
       - name: Install toolchain
         uses: dtolnay/rust-toolchain@stable
-        if: ${{ !matrix.settings.docker }}
         with:
           toolchain: stable
           components: clippy, rustfmt
@@ -38,8 +37,8 @@ jobs:
           path: node_modules
           key: npm-cache-lint-node@16
 
-      - name: 'Install dependencies'
-        run: yarn install --frozen-lockfile --registry https://registry.npmjs.org --network-timeout 300000
+      - name: Install dependencies
+        run: yarn install --immutable --network-timeout 300000
 
       - name: Check format
         run: |
