@@ -399,13 +399,14 @@ jobs:
           yarn config set supportedArchitectures.libc "glibc"
           yarn install
       - name: Setup and run tests
+        if: matrix.node != '14'
         uses: addnab/docker-run-action@v3
         with:
           image: ghcr.io/napi-rs/napi-rs/nodejs:aarch64-${{ matrix.node }}
           options: '-v ${{ github.workspace }}:/build -w /build'
           run: |
             set -e
-            yarn test -- --watch false
+            yarn test
             ls -la
   test-linux-aarch64-musl-binding:
     name: Test bindings on aarch64-unknown-linux-musl - node@${{ matrix.node }}
