@@ -405,7 +405,7 @@ jobs:
           options: '-v ${{ github.workspace }}:/build -w /build'
           run: |
             set -e
-            yarn test
+            yarn test -- --watch false
             ls -la
   test-linux-aarch64-musl-binding:
     name: Test bindings on aarch64-unknown-linux-musl - node@${{ matrix.node }}
