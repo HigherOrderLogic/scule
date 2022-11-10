@@ -3,6 +3,7 @@ env:
   DEBUG: napi:*
   APP_NAME: scule
   MACOSX_DEPLOYMENT_TARGET: '10.13'
+  VITEST_SEGFAULT_RETRY: '5'
 'on':
   push:
     branches:
