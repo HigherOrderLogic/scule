@@ -1,6 +1,20 @@
 {
   "$schema": "https://docs.renovatebot.com/renovate-schema.json",
   "extends": [
-    "config:base"
+    "config:base",
+    "schedule:weekly",
+    "group:allNonMajor",
+    ":maintainLockFilesWeekly",
+    ":rebaseStalePrs",
+    ":semanticCommits"
+  ],
+  "labels": ["dependencies"],
+  "js": { "labels": ["dependencies-js"] },
+  "rust": { "labels": ["dependencies-rs"] },
+  "packageRules": [
+    {
+      "matchUpdateTypes": ["patch", "lockFileMaintenance"],
+      "automerge": true
+    }
   ]
 }
